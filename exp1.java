@@ -10,7 +10,11 @@ import java.util.Iterator;
 //change on branch C4
 
 
+
 //changed on B1
+
+//changed on B2
+
 class Expression implements Cloneable  {
 	public int coef = 1;
 	public int[] powers;
