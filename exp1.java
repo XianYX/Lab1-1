@@ -8,6 +8,7 @@ import java.util.Iterator;
 
 //change this line to create a commit
 
+//changed on B2
 class Expression implements Cloneable  {
 	public int coef = 1;
 	public int[] powers;
