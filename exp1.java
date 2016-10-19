@@ -15,6 +15,8 @@ import java.util.Iterator;
 
 //changed on B2
 
+
+//changed on partner
 class Expression implements Cloneable  {
 	public int coef = 1;
 	public int[] powers;
