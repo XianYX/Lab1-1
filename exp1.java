@@ -1,19 +1,12 @@
-// package exp1;
-import java.util.Scanner;
+package expression;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator; 
-
-//change this line to create a commit
-//change on branch C4
-
-
-
-//changed on B1
-
-//changed on B2
+import java.util.Iterator;
+import java.util.Scanner;
+ 
 
 class Expression implements Cloneable  {
 	public int coef = 1;
@@ -44,7 +37,7 @@ public class exp1 {
 			System.out.print("$ ");
 	        if(scan.hasNextLine()){   
 	        	String line = scan.nextLine();
-	        	
+	                long startTime = System.nanoTime();
 	        	if(line.equals("")) continue;
 	        	if(line.equals("over")) break;
 	        	if(line.charAt(0)!='!') line = line.replace(" ","");
@@ -52,6 +45,10 @@ public class exp1 {
 	        		analysis(line);
 	        		print(merge(exprlist));
 	        	}
+                        long endTime = System.nanoTime();
+	        	System.out.print("开始时间:"+startTime+"\t");
+	        	System.out.print("结束时间:"+endTime+"\t");
+	        	System.out.println("运行时间:"+(endTime-startTime)+"ns");
 	        }  
 		}while(true);
 		scan.close();
@@ -102,6 +99,8 @@ public class exp1 {
 			else
 				res = res.substring(0,res.length()-1) + s.coef;
 			//res = res + (s.coef>0?s.coef:("-"+(0-s.coef)));
+			if(s.coef == 0) 
+				{continue;}
 			for(int i : s.powers)
 			{
 				char var = it.next();
@@ -109,6 +108,7 @@ public class exp1 {
 					res = res + "*"+var+"^"+i;
 				}
 			}
+			//...
 			res = res + "+";
 		}
 		System.out.println(res.substring(0,res.length()-1));
